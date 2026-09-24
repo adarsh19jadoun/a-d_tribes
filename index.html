@@ -3,367 +3,680 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&D Tribes | Explore Himachal Pradesh</title>
+    <title>A&D Tribes | Spiti Valley & Himachal Expeditions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --accent: #ff6b6b;
+            --accent-hover: #e64e4e;
+            --wa-green: #25D366;
+            --dark: #0f172a;
+            --dark-surface: #1e293b;
+            --slate: #64748b;
+            --light-bg: #f8fafc;
+            --card-border: #e2e8f0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
         body {
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: var(--light-bg);
+            color: #334155;
             line-height: 1.6;
         }
-        
-        /* 1. Header with Mountain Panorama */
+
+        /* Hero Header */
         header {
-            background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7)), 
-                        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            height: 65vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
         }
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 12px;
+
+        .badge-pill {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             letter-spacing: 1px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
+        header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            margin-bottom: 16px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        }
+
         header p {
-            font-size: 1.35rem;
-            margin-bottom: 25px;
-            max-width: 650px;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-            font-weight: 300;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 30px;
+            max-width: 680px;
+            color: #e2e8f0;
+            font-weight: 400;
         }
+
         .cta-btn {
-            background-color: #25D366; /* WhatsApp Green */
+            background-color: var(--accent);
             color: white;
             padding: 14px 34px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
             border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
             transition: all 0.3s ease;
+            display: inline-block;
         }
+
         .cta-btn:hover {
-            background-color: #20bd5a;
+            background-color: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px 20px;
+            padding: 60px 20px 20px;
         }
 
-        /* 2. Intro Section with Misty Mountain Scenery */
-        .intro-banner {
-            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
-                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center center/cover;
-            border-radius: 15px;
-            padding: 45px 30px;
+        .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            margin-bottom: 40px;
         }
-        .intro-banner h2 {
-            font-size: 2.3rem;
-            color: #1e293b;
-            margin-bottom: 12px;
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-weight: 800;
         }
-        .intro-banner p {
-            color: #475569;
-            font-size: 1.1rem;
-            max-width: 750px;
+
+        .section-title p {
+            color: var(--slate);
+            font-size: 1.05rem;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        /* 3. Cards Grid */
+        /* Featured Tour Spotlight */
+        .featured-tour {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid var(--card-border);
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .featured-tour { grid-template-columns: 1fr; }
+        }
+
+        .tour-media {
+            position: relative;
+            min-height: 380px;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+        }
+
+        .tour-price-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .tour-content {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tour-content h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .tour-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 16px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--slate);
+        }
+
+        .spec-value {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark-surface);
+            margin-top: 4px;
+        }
+
+        /* Day-Wise Accordion */
+        .itinerary-accordion {
+            margin: 25px 0 0;
+        }
+
+        details {
+            background: white;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        summary {
+            padding: 14px 18px;
+            font-weight: 700;
+            color: var(--dark-surface);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        summary::after {
+            content: '+';
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details[open] {
+            border-color: var(--primary);
+        }
+
+        .itinerary-body {
+            padding: 14px 18px;
+            color: #475569;
+            font-size: 0.95rem;
+            border-top: 1px solid var(--card-border);
+            background: #fafafa;
+        }
+
+        /* Travel Advisory Grid */
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .advisory-card {
+            background: white;
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .advisory-card h4 {
+            color: var(--dark);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .advisory-card p {
+            font-size: 0.92rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* Existing Packages Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 25px;
+            margin-bottom: 50px;
         }
+
         .gallery-item {
             background-color: white;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
         }
+
         .gallery-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.14);
+            transform: translateY(-5px);
         }
+
         .gallery-item img {
             width: 100%;
-            height: 240px;
+            height: 230px;
             object-fit: cover;
-            display: block;
-            border-bottom: 4px solid #0284c7;
+            border-bottom: 4px solid var(--primary);
         }
+
         .item-details {
-            padding: 22px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
+
         .item-details h3 {
-            margin-bottom: 10px;
-            color: #1e293b;
-            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 700;
         }
+
         .item-details p {
-            color: #64748b;
-            font-size: 0.95rem;
-            margin-bottom: 18px;
-            line-height: 1.5;
+            color: var(--slate);
+            font-size: 0.92rem;
+            margin-bottom: 16px;
         }
+
         .item-details .tags {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
         }
+
         .item-details .tag {
             background-color: #e0f2fe;
-            color: #0369a1;
-            padding: 5px 12px;
+            color: var(--primary-dark);
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.78rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        /* 4. Contact Section */
+        /* Inclusions / Exclusions */
+        .checklist-section {
+            background: white;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 35px 30px;
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .checklist-section { grid-template-columns: 1fr; }
+        }
+
+        .checklist h4 {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 6px 0;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist.inc li::before { content: '✓'; color: #16a34a; font-weight: 800; }
+        .checklist.exc li::before { content: '✕'; color: #dc2626; font-weight: 800; }
+
+        /* Contact Section */
         .contact-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-                        url('https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1600&q=80') center center/cover;
-            border-radius: 15px;
+            background: white;
+            border-radius: 16px;
             padding: 45px 30px;
-            margin: 40px auto 20px;
             text-align: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            margin-bottom: 40px;
         }
-        .contact-section h2 {
-            font-size: 2.2rem;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-        .contact-section p {
-            color: #64748b;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
+
         .contact-cards {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
-        }
-        .contact-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            padding: 22px 35px;
-            border-radius: 12px;
-            min-width: 280px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-        .contact-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #64748b;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        .whatsapp-link {
-            color: #128c7e !important;
-            text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .whatsapp-link:hover {
-            text-decoration: underline;
-            color: #075e54 !important;
-        }
-        .contact-value a {
-            color: #0284c7;
-            text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: bold;
-        }
-        .contact-value a:hover {
-            text-decoration: underline;
-            color: #0369a1;
+            gap: 20px;
+            margin-top: 25px;
         }
 
-        /* 5. Footer */
-        footer {
-            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.95)), 
-                        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80') center center/cover;
-            color: #f8fafc;
-            text-align: center;
-            padding: 45px 20px 35px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .contact-card {
+            background: var(--light-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px 30px;
+            border-radius: 12px;
+            min-width: 260px;
         }
-        footer .footer-contact {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+
+        .contact-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--slate);
+            margin-bottom: 6px;
         }
-        footer .footer-contact a {
-            color: #38bdf8;
+
+        .contact-value a {
             text-decoration: none;
-            margin: 0 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
-        footer .footer-contact a.footer-wa {
-            color: #4ade80;
+
+        .wa-val { color: var(--wa-green) !important; }
+        .mail-val { color: var(--primary) !important; }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--wa-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
         }
-        footer .footer-contact a:hover {
-            text-decoration: underline;
+
+        .floating-wa:hover {
+            transform: scale(1.1);
         }
-        footer p {
+
+        .floating-wa svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 35px 20px;
             font-size: 0.9rem;
-            opacity: 0.8;
-            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Section 1: Hero Header -->
+    <!-- Hero Header -->
     <header>
-        <h1>Explore Himachal Pradesh</h1>
-        <p>Embark on tailor-made alpine escapes, pristine trekking trails, and exhilarating mountain adventures.</p>
-        <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20I%20want%20to%20plan%20a%20Himachal%20escape!" target="_blank" rel="noopener noreferrer" class="cta-btn">Book on WhatsApp</a>
+        <span class="badge-pill">Himalayan Expeditions 2026</span>
+        <h1>Conquer Spiti & High Himachal</h1>
+        <p>Traverse high-altitude cold deserts, ancient 1,000-year-old monasteries, and surreal turquoise alpine lakes with seasoned local mountain leaders.</p>
+        <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20I%20want%20to%20inquire%20about%20the%20Spiti%20Valley%20Tour!" target="_blank" rel="noopener noreferrer" class="cta-btn">Book Spiti Tour via WhatsApp</a>
     </header>
 
-    <div class="container" id="tours">
-        <!-- Section 2: Intro with Mountain Backdrop -->
-        <div class="intro-banner">
-            <h2>Our Featured Mountain Visuals & Packages</h2>
-            <p>Your curated campaign visuals highlighting beautiful valley life, high-altitude expeditions, and majestic snow peaks.</p>
+    <div class="container">
+
+        <!-- 1. Featured Expedition: Spiti Valley Circuit -->
+        <div class="section-title">
+            <h2>Featured Expedition: Spiti Circuit</h2>
+            <p>Our flagship 7-day all-inclusive expedition through the rugged heart of the Middle Land.</p>
         </div>
 
-        <!-- Section 3: Package Cards with Mountain Views -->
+        <div class="featured-tour">
+            <div class="tour-media">
+                <span class="tour-price-badge">Starting ₹18,499 / person</span>
+            </div>
+            <div class="tour-content">
+                <div>
+                    <h3>Ultimate Spiti Valley Odyssey</h3>
+                    <p style="color: var(--slate); font-size: 0.95rem;">Manali – Rohtang / Atal Tunnel – Kaza – Key Monastery – Hikkim – Komic – Langza – Chandratal Lake.</p>
+                    
+                    <div class="tour-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Duration</div>
+                            <div class="spec-value">7D / 6N</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Max Altitude</div>
+                            <div class="spec-value">15,059 FT</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Grade</div>
+                            <div class="spec-value">Moderate</div>
+                        </div>
+                    </div>
+
+                    <!-- Day-Wise Itinerary Accordion -->
+                    <div class="itinerary-accordion">
+                        <details open>
+                            <summary>Day 1: Manali to Kaza via Kunzum Pass</summary>
+                            <div class="itinerary-body">Early departure via Atal Tunnel and Batal. Cross Kunzum La (14,931 ft) with prayers at Kunzum Mata Temple before descending into Kaza basecamp.</div>
+                        </details>
+                        <details>
+                            <summary>Day 2: Key Monastery & Kibber Wildlife Sanctuary</summary>
+                            <div class="itinerary-body">Visit the fortified 11th-century Key Gompa. Head to Kibber (14,200 ft), known for snow leopard conservation and dramatic cliff bridges.</div>
+                        </details>
+                        <details>
+                            <summary>Day 3: World's Highest Villages (Hikkim, Komic, Langza)</summary>
+                            <div class="itinerary-body">Send a postcard from the world's highest post office at Hikkim (14,567 ft), explore Komic village (15,027 ft), and photograph the Buddha statue in Langza.</div>
+                        </details>
+                        <details>
+                            <summary>Day 4: Dhankar Monastery & Tabo Caves</summary>
+                            <div class="itinerary-body">Excursion to the cliff-hanging Dhankar Fort and the UNESCO-listed Tabo Monastery, renowned for its ancient mud stupas and murals.</div>
+                        </details>
+                        <details>
+                            <summary>Day 5: Kaza to the Turquoise Chandratal Lake</summary>
+                            <div class="itinerary-body">Drive back toward Kunzum Pass and trek 2 km to the sacred Moon Lake (Chandratal). Overnight alpine dome camping under the Milky Way.</div>
+                        </details>
+                        <details>
+                            <summary>Day 6 & 7: Chandratal to Manali & Homeward Journey</summary>
+                            <div class="itinerary-body">Traverse Chhatru and Gramphu off-road trails back to Manali. Debrief dinner and onward transfers.</div>
+                        </details>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20please%20send%20detailed%20itinerary%20and%20slot%20dates%20for%20Spiti%20Circuit." target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; text-align: center;">Reserve Your Slot on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Essential Spiti Travel Advisory -->
+        <div class="section-title">
+            <h2>Essential Spiti Mountain Advisory</h2>
+            <p>Critical practical insights to ensure a safe, comfortable, and acclimatized expedition.</p>
+        </div>
+
+        <div class="advisory-grid">
+            <div class="advisory-card">
+                <h4>⛰️ AMS & Acclimatization</h4>
+                <p>Spiti rests above 12,000 ft. Stay hydrated (3–4L water daily), avoid intense physical exertion on Day 1, and consult a physician about carrying Diamox.</p>
+            </div>
+            <div class="advisory-card">
+                <h4>📶 Network & Connectivity</h4>
+                <p>Only postpaid **BSNL** and **Jio** work reliably in Kaza town. Expect total digital detox with zero signal at Chandratal, Kunzum, and remote villages.</p>
+            </div>
+            <div class="advisory-card">
+                <h4>💵 Cash & ATMs</h4>
+                <p>The last functioning ATMs are located in Kaza, but frequently run out of cash. Carry adequate cash from Manali or Shimla for personal expenses.</p>
+            </div>
+            <div class="advisory-card">
+                <h4>🎒 Layering & Gear</h4>
+                <p>Temperatures plummet below freezing at night. Pack 3-in-1 windproof waterproof jackets, thermal inners, UV protection sunglasses, and sturdy hiking boots.</p>
+            </div>
+        </div>
+
+        <!-- 3. Inclusions & Exclusions Checklist -->
+        <div class="checklist-section">
+            <div class="checklist inc">
+                <h4>What's Included</h4>
+                <ul>
+                    <li>Experienced 4x4 / Tempo Traveler mountain driver & fuel</li>
+                    <li>Authentic local homestays & Chandratal swiss camp setup</li>
+                    <li>Breakfast & hot dinners prepared with organic valley produce</li>
+                    <li>Oxygen cylinders and First Aid kits on board</li>
+                    <li>Inner line permits & Green Tribunal environment fees</li>
+                </ul>
+            </div>
+            <div class="checklist exc">
+                <h4>What's Excluded</h4>
+                <ul>
+                    <li>Lunches and personal cafe stops in Kaza</li>
+                    <li>Travel / medical insurance</li>
+                    <li>Any emergency evacuation costs due to landslides/snow</li>
+                    <li>Tips for local mountain staff and drivers</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. Other Himachal Destinations -->
+        <div class="section-title">
+            <h2>More Handcrafted Himachal Escapes</h2>
+            <p>From serene pine forests to weekend alpine ridge walks.</p>
+        </div>
+
         <div class="gallery-grid">
-            <!-- Pic 1 -->
+            <!-- Card 1 (Local file) -->
             <div class="gallery-item">
-                <img src="pexels-daredevil-30723537.jpg" alt="Himachal Mountain Landscape">
+                <img src="pexels-daredevil-30723537.jpg" alt="The Scenic Ridge Experience">
                 <div class="item-details">
                     <div>
                         <h3>The Scenic Ridge Experience</h3>
-                        <p>Perfect for launch campaigns focused on spectacular panoramic views and alpine couple getaways.</p>
+                        <p>Scenic overlook treks tailored for couples and relaxed group getaways around Kullu valley.</p>
                     </div>
                     <div class="tags">
-                        <span class="tag">Global Luxury</span>
-                        <span class="tag">Scenic Overlook</span>
+                        <span class="tag">Weekend Escape</span>
+                        <span class="tag">Panoramic Views</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Pic 2 -->
+            <!-- Card 2 (Local file) -->
             <div class="gallery-item">
                 <img src="village.jpg" alt="Himalayan Village Trail">
                 <div class="item-details">
                     <div>
-                        <h3>Himalayan Village Expeditions</h3>
-                        <p>Showcasing rustic slate-roof hamlets, ancient step-farming valleys, and steep Himalayan footpaths.</p>
+                        <h3>Rustic Village Expeditions</h3>
+                        <p>Immerse in indigenous wooden Kath-Kuni architecture and step-farming lifestyles.</p>
                     </div>
                     <div class="tags">
-                        <span class="tag">Cultural Tour</span>
-                        <span class="tag">Mountain Trail</span>
+                        <span class="tag">Culture</span>
+                        <span class="tag">Heritage Walk</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Pic 3 -->
+            <!-- Card 3 -->
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="Himalayan Snow Peaks">
+                <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80" alt="Alpine Summit Treks">
                 <div class="item-details">
                     <div>
-                        <h3>Serene Himachali Escapes</h3>
-                        <p>Evoke peace and inner reflection surrounded by towering 6,000-meter snowy Himalayan giants.</p>
+                        <h3>High Pass & Summit Trails</h3>
+                        <p>Challenging alpine passes tailored for seasoned backpackers looking for snowline ridge walks.</p>
                     </div>
                     <div class="tags">
-                        <span class="tag">Himachal Special</span>
-                        <span class="tag">Snow Escapes</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pic 4 -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80" alt="Rocky Alpine Summit">
-                <div class="item-details">
-                    <div>
-                        <h3>Adventure & Winter Sports Hub</h3>
-                        <p>Highlight rugged alpine summits, thrilling cliffside routes, and ski-ready powdery slopes.</p>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Peak Climbing</span>
-                        <span class="tag">Winter Wonderland</span>
+                        <span class="tag">High Altitude</span>
+                        <span class="tag">Trekking</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 4: Contact & Bookings -->
-        <div class="contact-section" id="contact">
-            <h2>Get in Touch With A&D Tribes</h2>
-            <p>Ready to plan your Himalayan expedition? Chat with us directly on WhatsApp or drop us an email.</p>
+        <!-- 5. Contact Section -->
+        <div class="contact-section">
+            <h2 style="font-size: 2rem; color: var(--dark); margin-bottom: 8px;">Plan Your Spiti Journey with A&D Tribes</h2>
+            <p style="color: var(--slate);">Custom group departures, private 4x4 road trips, and customized dates available.</p>
             <div class="contact-cards">
-                <!-- Direct WhatsApp Link -->
                 <div class="contact-card">
-                    <div class="contact-label">Chat on WhatsApp</div>
+                    <div class="contact-label">WhatsApp Bookings</div>
                     <div class="contact-value">
-                        <a href="https://wa.me/918285170898?text=Hello%20A%26D%20Tribes,%20I'm%20interested%20in%20booking%20a%20Himachal%20tour%20package." target="_blank" rel="noopener noreferrer" class="whatsapp-link">
-                            +91 8285170898
-                        </a>
+                        <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20I%20have%20an%20inquiry%20regarding%20Himachal%20tours." target="_blank" rel="noopener noreferrer" class="wa-val">+91 8285170898</a>
                     </div>
                 </div>
-                
-                <!-- Email Link -->
                 <div class="contact-card">
-                    <div class="contact-label">Email Us</div>
+                    <div class="contact-label">Email Support</div>
                     <div class="contact-value">
-                        <a href="mailto:a&dtribes@gmail.com">a&dtribes@gmail.com</a>
+                        <a href="mailto:a&dtribes@gmail.com" class="mail-val">a&dtribes@gmail.com</a>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-    <!-- Section 5: Footer -->
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/918285170898?text=Hello%20A%26D%20Tribes,%20I'm%20interested%20in%20booking%20a%20tour!" class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
     <footer>
-        <div class="footer-contact">
-            <span>WhatsApp: <a href="https://wa.me/918285170898?text=Hello%20A%26D%20Tribes!" target="_blank" rel="noopener noreferrer" class="footer-wa">+91 8285170898</a></span> | 
-            <span>Email: <a href="mailto:a&dtribes@gmail.com">a&dtribes@gmail.com</a></span>
-        </div>
-        <p>&copy; 2026 A&D Tribes | Himalayan Expeditions. All Rights Reserved.</p>
+        <p>&copy; 2026 A&D Tribes. Spiti Valley & Himalayan Expeditions. All Rights Reserved.</p>
     </footer>
 
 </body>
