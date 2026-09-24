@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&D Tribes | Explore Himachal Pradesh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 1. Header with Mountain Panorama */
+        header {
+            background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+        header p {
+            font-size: 1.35rem;
+            margin-bottom: 25px;
+            max-width: 650px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+            font-weight: 300;
+        }
+        .cta-btn {
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            padding: 14px 34px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #20bd5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px 20px;
+        }
+
+        /* 2. Intro Section with Misty Mountain Scenery */
+        .intro-banner {
+            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center center/cover;
+            border-radius: 15px;
+            padding: 45px 30px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .intro-banner h2 {
+            font-size: 2.3rem;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+        .intro-banner p {
+            color: #475569;
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* 3. Cards Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .gallery-item {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.14);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 4px solid #0284c7;
+        }
+        .item-details {
+            padding: 22px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .item-details h3 {
+            margin-bottom: 10px;
+            color: #1e293b;
+            font-size: 1.25rem;
+        }
+        .item-details p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+        .item-details .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .item-details .tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        /* 4. Contact Section */
+        .contact-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                        url('https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1600&q=80') center center/cover;
+            border-radius: 15px;
+            padding: 45px 30px;
+            margin: 40px auto 20px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .contact-section h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        .contact-section p {
+            color: #64748b;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        .contact-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 22px 35px;
+            border-radius: 12px;
+            min-width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .contact-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .whatsapp-link {
+            color: #128c7e !important;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .whatsapp-link:hover {
+            text-decoration: underline;
+            color: #075e54 !important;
+        }
+        .contact-value a {
+            color: #0284c7;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+        .contact-value a:hover {
+            text-decoration: underline;
+            color: #0369a1;
+        }
+
+        /* 5. Footer */
+        footer {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.95)), 
+                        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80') center center/cover;
+            color: #f8fafc;
+            text-align: center;
+            padding: 45px 20px 35px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        footer .footer-contact {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        footer .footer-contact a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer .footer-contact a.footer-wa {
+            color: #4ade80;
+        }
+        footer .footer-contact a:hover {
+            text-decoration: underline;
+        }
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Hero Header -->
+    <header>
+        <h1>Explore Himachal Pradesh</h1>
+        <p>Embark on tailor-made alpine escapes, pristine trekking trails, and exhilarating mountain adventures.</p>
+        <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20I%20want%20to%20plan%20a%20Himachal%20escape!" target="_blank" rel="noopener noreferrer" class="cta-btn">Book on WhatsApp</a>
+    </header>
+
+    <div class="container" id="tours">
+        <!-- Section 2: Intro with Mountain Backdrop -->
+        <div class="intro-banner">
+            <h2>Our Featured Mountain Visuals & Packages</h2>
+            <p>Your curated campaign visuals highlighting beautiful valley life, high-altitude expeditions, and majestic snow peaks.</p>
+        </div>
+
+        <!-- Section 3: Package Cards with Mountain Views -->
+        <div class="gallery-grid">
+            <!-- Pic 1 -->
+            <div class="gallery-item">
+                <img src="pexels-daredevil-30723537.jpg" alt="Himachal Mountain Landscape">
+                <div class="item-details">
+                    <div>
+                        <h3>The Scenic Ridge Experience</h3>
+                        <p>Perfect for launch campaigns focused on spectacular panoramic views and alpine couple getaways.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Global Luxury</span>
+                        <span class="tag">Scenic Overlook</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pic 2 -->
+            <div class="gallery-item">
+                <img src="pexels-muhammed-shasal-a-v-469318555-327.jpg" alt="Himalayan Village Trail">
+                <div class="item-details">
+                    <div>
+                        <h3>Himalayan Village Expeditions</h3>
+                        <p>Showcasing rustic slate-roof hamlets, ancient step-farming valleys, and steep Himalayan footpaths.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Cultural Tour</span>
+                        <span class="tag">Mountain Trail</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pic 3 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="Himalayan Snow Peaks">
+                <div class="item-details">
+                    <div>
+                        <h3>Serene Himachali Escapes</h3>
+                        <p>Evoke peace and inner reflection surrounded by towering 6,000-meter snowy Himalayan giants.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Himachal Special</span>
+                        <span class="tag">Snow Escapes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pic 4 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80" alt="Rocky Alpine Summit">
+                <div class="item-details">
+                    <div>
+                        <h3>Adventure & Winter Sports Hub</h3>
+                        <p>Highlight rugged alpine summits, thrilling cliffside routes, and ski-ready powdery slopes.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Peak Climbing</span>
+                        <span class="tag">Winter Wonderland</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Contact & Bookings -->
+        <div class="contact-section" id="contact">
+            <h2>Get in Touch With A&D Tribes</h2>
+            <p>Ready to plan your Himalayan expedition? Chat with us directly on WhatsApp or drop us an email.</p>
+            <div class="contact-cards">
+                <!-- Direct WhatsApp Link -->
+                <div class="contact-card">
+                    <div class="contact-label">Chat on WhatsApp</div>
+                    <div class="contact-value">
+                        <a href="https://wa.me/918285170898?text=Hello%20A%26D%20Tribes,%20I'm%20interested%20in%20booking%20a%20Himachal%20tour%20package." target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                            +91 8285170898
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Email Link -->
+                <div class="contact-card">
+                    <div class="contact-label">Email Us</div>
+                    <div class="contact-value">
+                        <a href="mailto:a&dtribes@gmail.com">a&dtribes@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Footer -->
+    <footer>
+        <div class="footer-contact">
+            <span>WhatsApp: <a href="https://wa.me/918285170898?text=Hello%20A%26D%20Tribes!" target="_blank" rel="noopener noreferrer" class="footer-wa">+91 8285170898</a></span> | 
+            <span>Email: <a href="mailto:a&dtribes@gmail.com">a&dtribes@gmail.com</a></span>
+        </div>
+        <p>&copy; 2026 A&D Tribes | Himalayan Expeditions. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

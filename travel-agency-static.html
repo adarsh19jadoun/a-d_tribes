@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&amp;D Tribes — Small-group trips off the usual map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#16241F;
+    --pine-2:#1E3129;
+    --linen:#F2ECDD;
+    --linen-2:#E9E1CC;
+    --brass:#B08D57;
+    --clay:#A6543A;
+    --ink:#1C1C1A;
+    --ink-soft:#5A5850;
+    --serif:'Fraunces', serif;
+    --sans:'Work Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--linen);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 32px;
+    max-width:1080px;margin:0 auto;
+  }
+  .brand{
+    font-family:var(--serif);
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--clay);}
+  .nav-links{display:flex;gap:28px;align-items:center;font-size:15px;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--ink);}
+
+  /* HERO */
+  .hero{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+    padding:40px 0 80px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:clamp(36px,5vw,58px);
+    font-weight:500;
+    line-height:1.08;
+    margin:0 0 24px;
+    max-width:11ch;
+  }
+  .hero p{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:38ch;
+    margin:0 0 28px;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--pine);
+    color:var(--linen);
+    padding:13px 26px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    border:none;
+    cursor:pointer;
+    font-family:var(--sans);
+    transition:background 0.15s ease;
+  }
+  .btn:hover{background:var(--pine-2);}
+  .btn-outline{
+    background:none;
+    color:var(--pine);
+    border:1px solid var(--pine);
+  }
+  .btn-outline:hover{background:var(--pine);color:var(--linen);}
+  .btn-clay{background:var(--clay);}
+  .btn-clay:hover{background:#8f4530;}
+
+  .route-art{width:100%;height:auto;}
+
+  /* SECTION HEADS */
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin:0 0 8px;
+    border-bottom:1px solid var(--linen-2);
+    padding-bottom:20px;
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-size:32px;
+    font-weight:500;
+    margin:0;
+  }
+  .section-sub{color:var(--ink-soft);font-size:15px;margin:0;}
+
+  /* TRIP LIST */
+  .trips{margin:60px 0 90px;}
+  .trip{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:36px;
+    padding:36px 0;
+    border-bottom:1px solid var(--linen-2);
+    align-items:start;
+  }
+  .trip:nth-child(even) .trip-art{order:2;}
+  .trip:nth-child(even) .trip-body{order:1;}
+  .trip-art{
+    height:180px;
+    border-radius:2px;
+    position:relative;
+    overflow:hidden;
+  }
+  .trip-body h3{
+    font-family:var(--serif);
+    font-size:26px;
+    font-weight:500;
+    margin:0 0 6px;
+  }
+  .trip-meta{
+    font-size:13px;
+    color:var(--brass);
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  .trip-body p{
+    color:var(--ink-soft);
+    font-size:15px;
+    max-width:56ch;
+    margin:0 0 20px;
+  }
+  .trip-foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .trip-price{font-family:var(--serif);font-size:20px;}
+  .trip-price span{font-size:13px;color:var(--ink-soft);font-family:var(--sans);}
+
+  /* FOOTER */
+  footer{
+    background:var(--pine);
+    color:var(--linen);
+    padding:54px 0 34px;
+    margin-top:40px;
+  }
+  footer .wrap{
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;
+  }
+  footer h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 8px;}
+  footer p{color:#C9C2AC;font-size:14px;margin:0 0 4px;}
+  footer a{text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  .foot-bottom{
+    max-width:1080px;margin:34px auto 0;padding:20px 32px 0;
+    border-top:1px solid rgba(242,236,221,0.15);
+    display:flex;justify-content:space-between;font-size:13px;color:#9C9784;
+  }
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;}
+    .trip{grid-template-columns:1fr;}
+    .trip:nth-child(even) .trip-art,.trip:nth-child(even) .trip-body{order:0;}
+    footer .wrap{flex-direction:column;align-items:flex-start;}
+    nav{flex-direction:column;gap:14px;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">A&amp;D <span>Tribes</span></div>
+  <div class="nav-links">
+    <a href="#trips">Trips</a>
+    <a href="#contact-foot">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <h1>Go where the map runs out of detail.</h1>
+      <p>Small-group trips through Himachal Pradesh — Spiti, Manali, Kullu, Dalhousie, and Kasol — led by people who know these valleys well.</p>
+      <a href="#trips" class="btn">View current trips</a>
+    </div>
+    <div>
+      <svg class="route-art" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="320" fill="none"/>
+        <path d="M30 260 Q 90 180 140 200 T 240 120 T 330 60" stroke="#B08D57" stroke-width="2" fill="none" stroke-dasharray="6 7"/>
+        <circle cx="30" cy="260" r="5" fill="#16241F"/>
+        <circle cx="140" cy="200" r="4" fill="#A6543A"/>
+        <circle cx="240" cy="120" r="4" fill="#A6543A"/>
+        <circle cx="330" cy="60" r="6" fill="#16241F"/>
+        <path d="M300 40 L330 60 L300 90" stroke="#16241F" stroke-width="1.5" fill="none"/>
+        <path d="M300 40 Q 320 20 350 30" stroke="#16241F" stroke-width="1.5" fill="none"/>
+        <g stroke="#C9BE9E" stroke-width="1">
+          <path d="M0 40 Q 200 10 400 45" fill="none"/>
+          <path d="M0 70 Q 200 40 400 75" fill="none"/>
+          <path d="M0 300 Q 200 280 400 305" fill="none"/>
+        </g>
+        <text x="30" y="280" font-family="Work Sans" font-size="11" fill="#5A5850">Start</text>
+        <text x="310" y="55" font-family="Work Sans" font-size="11" fill="#5A5850">Summit</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="trips" class="trips">
+    <div class="section-head">
+      <h2>Current trips</h2>
+      <p class="section-sub">5 trips open for booking</p>
+    </div>
+    <div id="tripList"></div>
+  </section>
+</div>
+
+<footer id="contact-foot">
+  <div class="wrap">
+    <div>
+      <h3>Plan something further out.</h3>
+      <p>Tell us where, and we'll tell you how.</p>
+    </div>
+    <div>
+      <p><a href="mailto:email-adtribes@gmail.com">email-adtribes@gmail.com</a></p>
+      <p><a href="https://wa.me/918285170898" target="_blank" rel="noopener">+91 82851 70898 (WhatsApp)</a></p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>A&amp;D Tribes</span>
+    <span>Est. 2018</span>
+  </div>
+</footer>
+
+<script>
+const artStyles = [
+  'linear-gradient(135deg,#3A5245,#16241F)',
+  'linear-gradient(135deg,#8f6a3f,#4a3620)',
+  'linear-gradient(135deg,#6b4a3a,#2b1c15)',
+  'linear-gradient(135deg,#4a5f52,#1c2a22)',
+  'linear-gradient(135deg,#7a5a35,#3a2a15)'
+];
+
+const WHATSAPP_NUMBER = '918285170898';
+
+const trips = [
+  {name:'Spiti Valley Circuit', destination:'Spiti, Himachal Pradesh', duration:'9 days', price:'₹32,000', description:'High-altitude desert monasteries, switchback roads, and villages that still run on old mountain time — Kaza, Key, Chandratal, and the passes between them.'},
+  {name:'Manali Highlands', destination:'Manali, Himachal Pradesh', duration:'5 days', price:'₹16,500', description:'Pine forests, river valleys, and easy access to Solang and Rohtang — a relaxed base for short treks and slow mornings with mountain views.'},
+  {name:'Kullu Valley Trail', destination:'Kullu, Himachal Pradesh', duration:'6 days', price:'₹18,000', description:'Orchards, temples, and the Beas river running alongside every stretch of road — a quieter valley for travelers who\\'d rather wander than rush.'},
+  {name:'Dalhousie Retreat', destination:'Dalhousie, Himachal Pradesh', duration:'4 days', price:'₹14,000', description:'Colonial-era hill town streets, pine-covered ridgelines, and views out toward the Dhauladhar range — an easy, unhurried escape.'},
+  {name:'Kasol & Parvati Valley', destination:'Kasol, Himachal Pradesh', duration:'5 days', price:'₹15,500', description:'Riverside cafes, forest trails, and day hikes to Kheerganga and Tosh — the valley that draws travelers back year after year.'}
+];
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function whatsappLink(tripName){
+  const msg = encodeURIComponent(`Hi! I'd like to know more about the ${tripName} trip.`);
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+}
+
+function renderTrips(){
+  const list = document.getElementById('tripList');
+  list.innerHTML = trips.map((t,i)=>`
+    <div class="trip">
+      <div class="trip-art" style="background:${artStyles[i % artStyles.length]}"></div>
+      <div class="trip-body">
+        <h3>${escapeHtml(t.name)}</h3>
+        <p class="trip-meta">${escapeHtml(t.destination)} · ${escapeHtml(t.duration)}</p>
+        <p>${escapeHtml(t.description)}</p>
+        <div class="trip-foot">
+          <div class="trip-price">${escapeHtml(t.price)} <span>per person</span></div>
+          <a class="btn btn-clay" href="${whatsappLink(t.name)}" target="_blank" rel="noopener">Inquire on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderTrips();
+</script>
+
+</body>
+</html>
