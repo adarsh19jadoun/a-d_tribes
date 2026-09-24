@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&D Tribes | Spiti Valley & Himachal Expeditions</title>
+    <title>A&D Tribes | Spiti & Manali Himachal Expeditions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@
         header p {
             font-size: clamp(1rem, 2vw, 1.25rem);
             margin-bottom: 30px;
-            max-width: 680px;
+            max-width: 700px;
             color: #e2e8f0;
             font-weight: 400;
         }
@@ -94,6 +94,26 @@
             background-color: var(--accent-hover);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .cta-wa-btn {
+            background-color: var(--wa-green);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-wa-btn:hover {
+            background-color: #20bd5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
         }
 
         .container {
@@ -121,7 +141,7 @@
             margin: 0 auto;
         }
 
-        /* Featured Tour Spotlight */
+        /* Tour Cards (Spiti & Manali) */
         .featured-tour {
             background: white;
             border-radius: 20px;
@@ -140,7 +160,17 @@
         .tour-media {
             position: relative;
             min-height: 380px;
-            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .media-spiti {
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+        }
+
+        .media-manali {
+            background-image: url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80');
         }
 
         .tour-price-badge {
@@ -199,9 +229,9 @@
             margin-top: 4px;
         }
 
-        /* Day-Wise Accordion */
+        /* Day-Wise Accordions */
         .itinerary-accordion {
-            margin: 25px 0 0;
+            margin: 20px 0;
         }
 
         details {
@@ -282,7 +312,43 @@
             line-height: 1.5;
         }
 
-        /* Existing Packages Grid */
+        /* Inclusions / Exclusions */
+        .checklist-section {
+            background: white;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 35px 30px;
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .checklist-section { grid-template-columns: 1fr; }
+        }
+
+        .checklist h4 {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .checklist ul { list-style: none; }
+
+        .checklist li {
+            padding: 6px 0;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist.inc li::before { content: '✓'; color: #16a34a; font-weight: 800; }
+        .checklist.exc li::before { content: '✕'; color: #dc2626; font-weight: 800; }
+
+        /* Gallery Grid (Local images) */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -301,9 +367,7 @@
             flex-direction: column;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
+        .gallery-item:hover { transform: translateY(-5px); }
 
         .gallery-item img {
             width: 100%;
@@ -347,44 +411,6 @@
             font-size: 0.78rem;
             font-weight: 700;
         }
-
-        /* Inclusions / Exclusions */
-        .checklist-section {
-            background: white;
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 35px 30px;
-            margin-bottom: 50px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 700px) {
-            .checklist-section { grid-template-columns: 1fr; }
-        }
-
-        .checklist h4 {
-            font-size: 1.15rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .checklist ul {
-            list-style: none;
-        }
-
-        .checklist li {
-            padding: 6px 0;
-            font-size: 0.92rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .checklist.inc li::before { content: '✓'; color: #16a34a; font-weight: 800; }
-        .checklist.exc li::before { content: '✕'; color: #dc2626; font-weight: 800; }
 
         /* Contact Section */
         .contact-section {
@@ -449,15 +475,8 @@
             text-decoration: none;
         }
 
-        .floating-wa:hover {
-            transform: scale(1.1);
-        }
-
-        .floating-wa svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
+        .floating-wa:hover { transform: scale(1.1); }
+        .floating-wa svg { width: 32px; height: 32px; fill: white; }
 
         footer {
             background-color: var(--dark);
@@ -472,22 +491,79 @@
 
     <!-- Hero Header -->
     <header>
-        <span class="badge-pill">Himalayan Expeditions 2026</span>
-        <h1>Conquer Spiti & High Himachal</h1>
-        <p>Traverse high-altitude cold deserts, ancient 1,000-year-old monasteries, and surreal turquoise alpine lakes with seasoned local mountain leaders.</p>
-        <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20I%20want%20to%20inquire%20about%20the%20Spiti%20Valley%20Tour!" target="_blank" rel="noopener noreferrer" class="cta-btn">Book Spiti Tour via WhatsApp</a>
+        <span class="badge-pill">Himachal Expeditions 2026</span>
+        <h1>Explore Spiti & Manali with A&D Tribes</h1>
+        <p>From alpine pine forest trails in Manali to surreal high-altitude cold deserts in Spiti, explore the best of Himachal with trusted local organizers.</p>
+        <a href="#packages" class="cta-btn">View Tour Packages</a>
     </header>
 
-    <div class="container">
+    <div class="container" id="packages">
 
-        <!-- 1. Featured Expedition: Spiti Valley Circuit -->
+        <!-- PACKAGE 1: MANALI & SETHAN ADVENTURE -->
         <div class="section-title">
-            <h2>Featured Expedition: Spiti Circuit</h2>
-            <p>Our flagship 7-day all-inclusive expedition through the rugged heart of the Middle Land.</p>
+            <h2>Featured Package: Manali & Sethan Alpine Escape</h2>
+            <p>A high-octane 4-day mountain getaway blending pine forest serenity, snow activities, and rustic igloo village culture.</p>
         </div>
 
         <div class="featured-tour">
-            <div class="tour-media">
+            <div class="tour-media media-manali">
+                <span class="tour-price-badge">Starting ₹7,999 / person</span>
+            </div>
+            <div class="tour-content">
+                <div>
+                    <h3>Manali, Solang Valley & Sethan Igloo Village</h3>
+                    <p style="color: var(--slate); font-size: 0.95rem;">Old Manali – Solang Snow Point – Atal Tunnel – Sissu (Lahaul) – Jogini Waterfalls – Sethan Hampta Valley.</p>
+                    
+                    <div class="tour-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Duration</div>
+                            <div class="spec-value">4D / 3N</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Max Altitude</div>
+                            <div class="spec-value">10,200 FT</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Grade</div>
+                            <div class="spec-value">Easy - Mod</div>
+                        </div>
+                    </div>
+
+                    <!-- Day-Wise Itinerary Accordion -->
+                    <div class="itinerary-accordion">
+                        <details open>
+                            <summary>Day 1: Arrival in Manali & Old Manali Heritage Walk</summary>
+                            <div class="itinerary-body">Check-in at our alpine cottage. Afternoon walk through cedar forests to Hadimba Devi Temple, followed by cafe hopping and live acoustic music in Old Manali.</div>
+                        </details>
+                        <details>
+                            <summary>Day 2: Solang Valley & Atal Tunnel to Sissu (Lahaul)</summary>
+                            <div class="itinerary-body">Drive across the engineering marvel of Atal Tunnel into Lahaul Valley. Explore the majestic frozen Sissu Waterfalls, with paragliding and snow quad-biking options at Solang Valley.</div>
+                        </details>
+                        <details>
+                            <summary>Day 3: Sethan Hampta Base & Jogini Waterfall Trek</summary>
+                            <div class="itinerary-body">Ascend 35 hairpin bends to the restricted Buddhist hamlet of Sethan. Snowboarding, snow trekking, and stargazing from alpine dome stays at Hampta base.</div>
+                        </details>
+                        <details>
+                            <summary>Day 4: Vashisht Hot Springs & Departure</summary>
+                            <div class="itinerary-body">A short morning hike to Jogini Falls, relaxing dip in natural sulfur hot springs at Vashisht village, and evening Volvo departure for your return journey.</div>
+                        </details>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20I%20am%20interested%20in%20booking%20the%204D/3N%20Manali%20%26%20Sethan%20Tour%20Package!" target="_blank" rel="noopener noreferrer" class="cta-wa-btn" style="width: 100%;">Book Manali Package on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PACKAGE 2: SPITI VALLEY EXPEDITION -->
+        <div class="section-title">
+            <h2>Featured Expedition: Spiti Valley Circuit</h2>
+            <p>Our flagship 7-day all-inclusive expedition through the rugged heart of the high-altitude Middle Land.</p>
+        </div>
+
+        <div class="featured-tour">
+            <div class="tour-media media-spiti">
                 <span class="tour-price-badge">Starting ₹18,499 / person</span>
             </div>
             <div class="tour-content">
@@ -512,95 +588,94 @@
 
                     <!-- Day-Wise Itinerary Accordion -->
                     <div class="itinerary-accordion">
-                        <details open>
+                        <details>
                             <summary>Day 1: Manali to Kaza via Kunzum Pass</summary>
-                            <div class="itinerary-body">Early departure via Atal Tunnel and Batal. Cross Kunzum La (14,931 ft) with prayers at Kunzum Mata Temple before descending into Kaza basecamp.</div>
+                            <div class="itinerary-body">Depart Manali via Atal Tunnel and Batal. Cross the formidable Kunzum La pass (14,931 ft) and descend into the cold desert capital of Kaza.</div>
                         </details>
                         <details>
-                            <summary>Day 2: Key Monastery & Kibber Wildlife Sanctuary</summary>
-                            <div class="itinerary-body">Visit the fortified 11th-century Key Gompa. Head to Kibber (14,200 ft), known for snow leopard conservation and dramatic cliff bridges.</div>
+                            <summary>Day 2: Key Monastery & Kibber Sanctuary</summary>
+                            <div class="itinerary-body">Tour the 1,000-year-old cliff-hanging Key Gompa, followed by an excursion to Kibber and Chicham Bridge—one of Asia's highest suspension bridges.</div>
                         </details>
                         <details>
                             <summary>Day 3: World's Highest Villages (Hikkim, Komic, Langza)</summary>
-                            <div class="itinerary-body">Send a postcard from the world's highest post office at Hikkim (14,567 ft), explore Komic village (15,027 ft), and photograph the Buddha statue in Langza.</div>
+                            <div class="itinerary-body">Post a letter from the world's highest post office at Hikkim, visit Komic Gompa (15,027 ft), and admire the giant Buddha statue at Langza.</div>
                         </details>
                         <details>
-                            <summary>Day 4: Dhankar Monastery & Tabo Caves</summary>
-                            <div class="itinerary-body">Excursion to the cliff-hanging Dhankar Fort and the UNESCO-listed Tabo Monastery, renowned for its ancient mud stupas and murals.</div>
+                            <summary>Day 4: Dhankar Monastery & Tabo Mud Caves</summary>
+                            <div class="itinerary-body">Visit the ancient cliff-edge Dhankar Fort and the UNESCO World Heritage Tabo Monastery, famous for its preserved mud murals and meditation caves.</div>
                         </details>
                         <details>
-                            <summary>Day 5: Kaza to the Turquoise Chandratal Lake</summary>
-                            <div class="itinerary-body">Drive back toward Kunzum Pass and trek 2 km to the sacred Moon Lake (Chandratal). Overnight alpine dome camping under the Milky Way.</div>
+                            <summary>Day 5: Kaza to Sacred Chandratal (Moon Lake)</summary>
+                            <div class="itinerary-body">Trek 2 km around the pristine turquoise waters of Chandratal. Overnight high-altitude swiss dome camping under the Milky Way.</div>
                         </details>
                         <details>
                             <summary>Day 6 & 7: Chandratal to Manali & Homeward Journey</summary>
-                            <div class="itinerary-body">Traverse Chhatru and Gramphu off-road trails back to Manali. Debrief dinner and onward transfers.</div>
+                            <div class="itinerary-body">Navigate the rugged Chhatru riverbeds and cross back over to Manali. Farewell dinner and homeward journey.</div>
                         </details>
                     </div>
                 </div>
 
                 <div style="margin-top: 25px;">
-                    <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20please%20send%20detailed%20itinerary%20and%20slot%20dates%20for%20Spiti%20Circuit." target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; text-align: center;">Reserve Your Slot on WhatsApp</a>
+                    <a href="https://wa.me/918285170898?text=Hi%20A%26D%20Tribes,%20please%20send%20detailed%20itinerary%20and%20dates%20for%20the%20Spiti%20Circuit." target="_blank" rel="noopener noreferrer" class="cta-wa-btn" style="width: 100%;">Book Spiti Circuit on WhatsApp</a>
                 </div>
             </div>
         </div>
 
-        <!-- 2. Essential Spiti Travel Advisory -->
+        <!-- 3. Travel Advisory -->
         <div class="section-title">
-            <h2>Essential Spiti Mountain Advisory</h2>
-            <p>Critical practical insights to ensure a safe, comfortable, and acclimatized expedition.</p>
+            <h2>Essential Himachal Mountain Advisory</h2>
+            <p>Key information to ensure a safe, comfortable, and well-prepared journey.</p>
         </div>
 
         <div class="advisory-grid">
             <div class="advisory-card">
-                <h4>⛰️ AMS & Acclimatization</h4>
-                <p>Spiti rests above 12,000 ft. Stay hydrated (3–4L water daily), avoid intense physical exertion on Day 1, and consult a physician about carrying Diamox.</p>
+                <h4>🏔️ Weather & Road Updates</h4>
+                <p>Atal Tunnel keeps Manali and Lahaul accessible year-round, while passes like Kunzum and Rohtang remain weather-dependent between May and October.</p>
             </div>
             <div class="advisory-card">
-                <h4>📶 Network & Connectivity</h4>
-                <p>Only postpaid **BSNL** and **Jio** work reliably in Kaza town. Expect total digital detox with zero signal at Chandratal, Kunzum, and remote villages.</p>
+                <h4>📶 Mobile Connectivity</h4>
+                <p>4G/5G works across Manali and Solang on Airtel and Jio. In Spiti and Chandratal, anticipate limited to zero network coverage.</p>
             </div>
             <div class="advisory-card">
-                <h4>💵 Cash & ATMs</h4>
-                <p>The last functioning ATMs are located in Kaza, but frequently run out of cash. Carry adequate cash from Manali or Shimla for personal expenses.</p>
+                <h4>🥾 Pack Smart</h4>
+                <p>Carry thermal base layers, fleece jackets, sturdy waterproof trekking shoes, lip balm, and high-SPF sunscreen for mountain sun.</p>
             </div>
             <div class="advisory-card">
-                <h4>🎒 Layering & Gear</h4>
-                <p>Temperatures plummet below freezing at night. Pack 3-in-1 windproof waterproof jackets, thermal inners, UV protection sunglasses, and sturdy hiking boots.</p>
+                <h4>🚙 Reliable Mountain Transport</h4>
+                <p>All our packages include professional local mountain drivers certified for snow and unpaved terrain navigation.</p>
             </div>
         </div>
 
-        <!-- 3. Inclusions & Exclusions Checklist -->
+        <!-- 4. Inclusions & Exclusions -->
         <div class="checklist-section">
             <div class="checklist inc">
                 <h4>What's Included</h4>
                 <ul>
-                    <li>Experienced 4x4 / Tempo Traveler mountain driver & fuel</li>
-                    <li>Authentic local homestays & Chandratal swiss camp setup</li>
-                    <li>Breakfast & hot dinners prepared with organic valley produce</li>
-                    <li>Oxygen cylinders and First Aid kits on board</li>
-                    <li>Inner line permits & Green Tribunal environment fees</li>
+                    <li>Private / Shared 4x4 or Tempo Traveler with mountain fuel & permits</li>
+                    <li>Handpicked 3-star cottages & authentic boutique homestays</li>
+                    <li>Nutritious breakfast & warm dinner daily</li>
+                    <li>Local trip leader & certified trekking guides</li>
+                    <li>First-aid kits, oxygen cylinders & safety briefing</li>
                 </ul>
             </div>
             <div class="checklist exc">
                 <h4>What's Excluded</h4>
                 <ul>
-                    <li>Lunches and personal cafe stops in Kaza</li>
-                    <li>Travel / medical insurance</li>
-                    <li>Any emergency evacuation costs due to landslides/snow</li>
-                    <li>Tips for local mountain staff and drivers</li>
+                    <li>Lunches and personal cafe expenses</li>
+                    <li>Adventure activities (paragliding, rafting, ski rentals)</li>
+                    <li>Travel / health insurance</li>
+                    <li>Personal tips and porter charges</li>
                 </ul>
             </div>
         </div>
 
-        <!-- 4. Other Himachal Destinations -->
+        <!-- 5. Handcrafted Gallery Grid (Local Images) -->
         <div class="section-title">
-            <h2>More Handcrafted Himachal Escapes</h2>
-            <p>From serene pine forests to weekend alpine ridge walks.</p>
+            <h2>Visual Gallery & Experience Trails</h2>
+            <p>Moments captured across our journeys in Himachal Pradesh.</p>
         </div>
 
         <div class="gallery-grid">
-            <!-- Card 1 (Local file) -->
             <div class="gallery-item">
                 <img src="pexels-daredevil-30723537.jpg" alt="The Scenic Ridge Experience">
                 <div class="item-details">
@@ -609,13 +684,12 @@
                         <p>Scenic overlook treks tailored for couples and relaxed group getaways around Kullu valley.</p>
                     </div>
                     <div class="tags">
-                        <span class="tag">Weekend Escape</span>
-                        <span class="tag">Panoramic Views</span>
+                        <span class="tag">Panoramic Ridge</span>
+                        <span class="tag">Scenic Overlook</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 2 (Local file) -->
             <div class="gallery-item">
                 <img src="village.jpg" alt="Himalayan Village Trail">
                 <div class="item-details">
@@ -624,13 +698,12 @@
                         <p>Immerse in indigenous wooden Kath-Kuni architecture and step-farming lifestyles.</p>
                     </div>
                     <div class="tags">
-                        <span class="tag">Culture</span>
+                        <span class="tag">Local Culture</span>
                         <span class="tag">Heritage Walk</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80" alt="Alpine Summit Treks">
                 <div class="item-details">
@@ -640,16 +713,16 @@
                     </div>
                     <div class="tags">
                         <span class="tag">High Altitude</span>
-                        <span class="tag">Trekking</span>
+                        <span class="tag">Snow Adventure</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 5. Contact Section -->
+        <!-- 6. Contact Section -->
         <div class="contact-section">
-            <h2 style="font-size: 2rem; color: var(--dark); margin-bottom: 8px;">Plan Your Spiti Journey with A&D Tribes</h2>
-            <p style="color: var(--slate);">Custom group departures, private 4x4 road trips, and customized dates available.</p>
+            <h2 style="font-size: 2rem; color: var(--dark); margin-bottom: 8px;">Plan Your Himachal Journey with A&D Tribes</h2>
+            <p style="color: var(--slate);">Custom group departures, private family packages, and college group discounts available.</p>
             <div class="contact-cards">
                 <div class="contact-card">
                     <div class="contact-label">WhatsApp Bookings</div>
@@ -676,7 +749,7 @@
     </a>
 
     <footer>
-        <p>&copy; 2026 A&D Tribes. Spiti Valley & Himalayan Expeditions. All Rights Reserved.</p>
+        <p>&copy; 2026 A&D Tribes. All Rights Reserved. Spiti Valley & Manali Mountain Expeditions.</p>
     </footer>
 
 </body>
